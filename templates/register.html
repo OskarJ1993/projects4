@@ -2,6 +2,9 @@
 <div class="col-xs-12 col-sm-12 offset-md-3 col-md-6 login_signup"> 
   <input type="checkbox" id="check">
   <div class="login form" style="margin: 2rem;">
+    <!--This is a Regiter Page where user can register itself in store-->
+        <!--This is a ALert Box which is use to show any message to user-->
+
     {% if messages %}
        {% for message in messages %}
            <p class="error-message">{{ message }}</p>
@@ -15,6 +18,8 @@
           <input type="text" name="username" required placeholder="Username">
           <input name="email" type="email" required placeholder="Email">
           <input name="password" type="password" required placeholder="Password">
+                  <!--Button is use to signup to website-->
+
           <input type="submit" class="button" value="Register">
       </form>
       <div class="signup">

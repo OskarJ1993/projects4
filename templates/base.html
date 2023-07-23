@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-
+<!--This a Base Html File that will be serve as master page for each page of website-->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -43,6 +43,7 @@
     
   </head>
   <body>
+     <!-- This is a navbar that displays on each page -->
     <nav class="navbar navbar-expand-lg" style="z-index: 20;">
           <a class="navbar-brand d-flex align-items-center" style="margin-left: 5rem;" href="{% url 'index' %}">
               <img src="{% static 'images\tire.png' %}" class="img-fluid logo-image">
@@ -82,6 +83,8 @@
                   <li class="nav-item">
                       <a class="nav-link custom-btn btn" href="{% url 'login' %}">Login</a>
                   </li>
+                  <!--Check if user is authenticated then show welcome user with is username-->
+
                     {% if user.is_authenticated %}
                     <p id="globaluserid" style="display: none;">{{user.id}}</p>
                     <li class="nav-item dropdown">
@@ -92,7 +95,7 @@
                           <li><a class="dropdown-item nav-link" href="{% url 'logout' %}">Logout</a></li>
                       </ul>
                     </li>
-                    {% else %}
+                    {% else %}            
                     <li class="nav-item">
                       <a class="nav-link" >Welcome, Guest</a></li>
                     {% endif %} 
@@ -132,6 +135,8 @@
               
       
   </nav>
+
+  <!-- This is a footer that displays on each page -->
   <main>{% block content %} {% endblock %}</main>
   
   <footer style="position: relative;bottom: 0;width: 100%;margin-top: 9rem;" class="footer bg-secondary text-light py-3">
