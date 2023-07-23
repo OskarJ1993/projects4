@@ -4,12 +4,11 @@ from .models import CustomUser
 
 
 class UserCreateForm(UserCreationForm):
-    email = EmailField(required=True)
 
     class Meta:
         model = CustomUser
-        fields = ("first_name", "last_name", "email", "address",
-                  "city", "zipcode", "password1", "password2")
+        fields = ("first_name", "last_name", "email", "username",
+                  "password")
 
     def save(self, commit=True):
         user = super(UserCreateForm, self).save(commit=False)

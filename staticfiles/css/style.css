@@ -1,5 +1,211 @@
 
 
+.image-upper{
+    width: 100%;
+    height: 500px;
+    background-image: url("https://asset.hankooktire.com/content/dam/hankooktire/local/img/main/brand-product/our-brands/img_dynapro@2x.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+/* footer */
+
+.footer-top {
+  background-color: #f8f8f8;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-logo h3 {
+  margin: 0;
+}
+
+.footer-logo a {
+  text-decoration: none;
+  color: #333;
+
+}
+
+.footer-bottom {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* index page */
+
+.products-rows {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.product-cols {
+  flex-basis: 25%;
+  padding: 15px;
+}
+
+/* tire page */ 
+
+.product-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.product-card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background-color: #0062cc;
+}
+
+
+/* register page */ 
+
+.register-box {
+  margin: 50px auto;
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.register-box h3 {
+  text-align: center;
+}
+
+.register-box form {
+  margin-top: 20px;
+}
+
+.register-box form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-box form button[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+.register-box p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-box p a {
+  color: #007bff;
+}
+
+/* login page */
+
+.login-box {
+  margin: 50px auto;
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.login-box h3 {
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-box form {
+  margin-top: 20px;
+}
+
+.login-box form .form-group {
+  margin-bottom: 15px;
+}
+
+.login-box form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.login-box form input[type="text"],
+.login-box form input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-box form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-box form button[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+
 /* cart page */ 
 
 .cart-page {

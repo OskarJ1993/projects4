@@ -13,7 +13,7 @@ $(document).ready(function() {
         url: '/add_to_cart/',
         data: {
           'product_id': product_id,
-          'quantity': quantity,
+          'quantity': 1,
           'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
         },
         success: function(response) {
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
   const currentYear = new Date().getFullYear();
   const yearSpan = document.getElementById('currentYear');
-  yearSpan.textContent = currentYear;
+  yearSpan.innerHTML = currentYear;
 
 
 

@@ -43,45 +43,39 @@
     
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg">
-      <div class="containerss">
-          <a class="navbar-brand d-flex align-items-center" href="{% url 'index' %}">
+    <nav class="navbar navbar-expand-lg" style="z-index: 20;">
+          <a class="navbar-brand d-flex align-items-center" style="margin-left: 5rem;" href="{% url 'index' %}">
               <img src="{% static 'images\tire.png' %}" class="img-fluid logo-image">
+              <strong class="logo-text">Tire Shop</strong>
 
-              <div class="d-flex flex-column">
-                  <strong class="logo-text">Tire Shop</strong>
-              </div>
-              <div class="input-group">
-
-                  <input type="text" name="job-title" id="job-title" class="form-control" placeholder="Search"
-                      required>
-              </div>
+           
+             
           </a>
-
+       
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav align-items-center">
+              <ul class="navbar-nav mr-auto" style="align-items: center;">
                   <li class="nav-item">
-                      <a class="nav-link" href="{% url 'index' %}">TIRES</a>
+                      <a class="nav-link" href="{% url 'phones' %}">TIRES</a>
                   </li>
 
                   <li class="nav-item">
-                      <a class="nav-link" href="{% url 'index' %}">RIMS</a>
+                      <a class="nav-link" href="{% url 'accessories' %}">RIMS</a>
                   </li>
 
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                       <a class="nav-link" href="{% url 'index' %}">TPMS</a>
                   </li>
 
                   <li class="nav-item">
                       <a class="nav-link" href="{% url 'index' %}">COMPLETE WHEELS</a>
-                  </li>
+                  </li> -->
 
-                  <li class="nav-item ms-lg-auto">
+                  <li class="nav-item">
                       <a class="nav-link" href="{% url 'register' %}">Register</a>
                   </li>
 
@@ -89,6 +83,7 @@
                       <a class="nav-link custom-btn btn" href="{% url 'login' %}">Login</a>
                   </li>
                     {% if user.is_authenticated %}
+                    <p id="globaluserid" style="display: none;">{{user.id}}</p>
                     <li class="nav-item dropdown">
                       <a class="welcome-text nav-link mb-0" href="#" id="navbarLightDropdownMenuLink" role="button" aria-expanded="false">Welcome, {{ user.username }}</a>
                     
@@ -96,9 +91,10 @@
 
                           <li><a class="dropdown-item nav-link" href="{% url 'logout' %}">Logout</a></li>
                       </ul>
+                    </li>
                     {% else %}
-                    <li class="nav-item dropdown">
-                      <a class="welcome-text nav-link mb-0" href="#" id="navbarLightDropdownMenuLink" role="button" aria-expanded="false">Welcome, Guest</a></li>
+                    <li class="nav-item">
+                      <a class="nav-link" >Welcome, Guest</a></li>
                     {% endif %} 
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -117,33 +113,31 @@
                     <li class="nav-item">
                       <a class="nav-link"><i class="fi-xnluhl-phone"></i></a>
                   </li>
+                  <li>
+                    
+              <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0">
+                <div style="display: inline-flex;height: 3rem;">
+                  
+                
+                <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
+                &nbsp &nbsp
+                  <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+              </div>
+              </form>
+                  </li>
+                </ul>
+           
+         
                 </div>
-              </ul>
-          </div>
-      </div>
+              
+      
   </nav>
   <main>{% block content %} {% endblock %}</main>
   
-   <footer class="site-footer ">
-    <div class="container">
-
-        <div class="site-footer-bottom">
-            <div class="container">
-                <div class="row">
-
-                    <div class="d-flex align-items-center footer-content">
-                        <p class="copyright-text">Copyright © Tire Logo 2023</p>
-
-                        <ul class="footer-menu d-flex">
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy Policy</a>
-                            </li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Terms</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <footer class="footer bg-secondary text-light py-3">
+    <div class="container text-center">
+        <p style="color: #fff;">&copy; Copyright © Tire Logo <span id="currentYear">2023</span></p>
+    </div>
 </footer>
   </body>
 </html>

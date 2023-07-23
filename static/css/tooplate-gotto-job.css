@@ -736,9 +736,9 @@ nav[aria-label="breadcrumb"] {
   padding-bottom: 6px;
 }
 
-.navbar-nav{
+/* .navbar-nav{
   margin-left: 380px;
-}
+} */
 
 .badge-level {
   background: var(--primary-color);
