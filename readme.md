@@ -1,6 +1,6 @@
 # Tire Web Shop
 
-[View the live project here.](https://project4web.onrender.com/)
+[View the live project here.](https://project4-lu77.onrender.com/)
 
 
 Tire Webshop is a web application built with Django, allowing users to browse, search, and purchase tires and rims online. It provides a user-friendly interface for customers to explore various tire options, view detailed product information, and add items to their shopping cart.
@@ -266,4 +266,4 @@ To Deploy to render you need to:
 
 
 
-- [LINK TO GITHUB PAGE.](https://oskarj1993.github.io/Project4/)
+- [LINK TO GITHUB PAGE.](https://oskarj1993.github.io/projects4/)
