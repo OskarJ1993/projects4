@@ -20,7 +20,7 @@ environ.Env.read_env()
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '7mu46wg3^(2c23kq0lp5s=u8(h+j(&7z=wu-!_+dlf%_58-6&u')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
