@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login
 from django.contrib  import messages
 from .forms import *
 from .models import *
+from django.http import HttpResponseRedirect
+
 
 #to Render Register User Page
 def register_view(request):
@@ -19,25 +21,37 @@ def register_view(request):
         form = UserCreateForm()
     return render(request, 'register.html', {'form': form})
 # To create Register User
+
 def register_add(request):
     if request.method == 'POST':
-        usernamedata = request.POST['username']
-        passworddata = request.POST['password']
-        emaildata = request.POST['email']
-        first_namedata = request.POST['first_name']
-        last_namedata = request.POST['last_name']
-        checkuser  = CustomUser.objects.filter(username=usernamedata)
-        if checkuser.exists():
-            messages.info(request,'User Name Already Exist.')
-            return redirect('register')
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
 
-        user = CustomUser.objects.create(username=usernamedata,first_name=first_namedata,last_name=last_namedata,email=emaildata);
-        user.set_password(passworddata)
+        if CustomUser.objects.filter(username=username).exists():
+            
+            messages.error(request, 'Username is already taken.')
+            return redirect('/register/')
+
+        user = CustomUser.objects.create(
+                    username=username,
+                    email=email,
+                    first_name=first_name,
+                    last_name=last_name
+                )
+        user.set_password(password)  
         user.save()
-        return redirect('login')
+
+        
+        messages.success(request, 'User registered successfully.')
+        return redirect('/login/')
     else:
-        form = UserCreateForm()
-    return render(request, 'register.html', {'form': form})
+        return render(request, 'register.html')
+
+
+
 
 # TO Render Login Page and Authenticate Login
 def login_view(request):

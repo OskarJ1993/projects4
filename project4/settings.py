@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,15 +12,16 @@ env = environ.Env()
 environ.Env.read_env()
 
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '7mu46wg3^(2c23kq0lp5s=u8(h+j(&7z=wu-!_+dlf%_58-6&u')
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -75,16 +77,18 @@ WSGI_APPLICATION = 'project4.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-import dj_database_url
-
 DATABASES = {
-    'default': 
-        dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse(env('DATABASE_URL'))
     
 }
 
 # render database
 
+
+# DATABASES = {
+#     'default' : dj_database_url.parse(env('DATABASE_URL'))
+
+# }
 
 
 
@@ -147,3 +151,4 @@ DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'register.CustomUser'

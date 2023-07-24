@@ -7,7 +7,6 @@ class CustomUser(AbstractUser):
                               max_length=255, unique=True)
     first_name = models.CharField(verbose_name='first_name', max_length=255)
     last_name = models.CharField(verbose_name='last_name', max_length=255)
-    password = models.CharField(verbose_name='password', max_length=255)
 
     username = models.CharField(verbose_name='username', max_length=255,unique=True)
      
