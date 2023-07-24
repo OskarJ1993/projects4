@@ -35,7 +35,7 @@ The following labels were used in this project and the distribution of user stor
   - Should-Have: 2/6
   - Could-Have: 1/6
 
-For more information: [View the Kanban Board here.](https://github.com/mittnamnkenny/fishtales/projects/1).
+For more information: [View the Kanban Board here.](https://github.com/users/OskarJ1993/projects/6).
 
 ## User Stories
 
